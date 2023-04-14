@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Roboto";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --lh: 1.4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "sidebar content"
+    "sidebar footer";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+sidebar {
+  grid-area: sidebar;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+content {
+  grid-area: content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer {
+  grid-area: footer;
+  border-top: 1px solid #dedede;
+}
+
+.sidenav {
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #aaaaaa;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+  background: #5c5c5c;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .sidebar a {
+    float: left;
   }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.logo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-detail {
+  margin: 30px 129px;
+  background: #efefef;
+  width: 972px;
+}
+
+.content-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  padding: 20px;
+}
+
+.content-title {
+  padding: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  align-items: center;
+  text-align: center;
+}
+
+.list-item {
+  margin: 30px 129px;
+  display: flex;
+}
+.card-item {
+  width: 33.33%;
+  margin-right: 55px;
+}
+
+.card-image {
+  float: left;
+  margin-right: 15px;
+}
+
+.footer {
+  margin: 30px 129px;
 }
